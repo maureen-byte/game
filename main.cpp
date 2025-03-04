@@ -21,13 +21,16 @@ public:
 		// Called once at the start, so create things here
 		return true;
 	}
-
-	bool OnUserUpdate(float fElapsedTime) override
+	OnUserUpdate(float fElapsedTime) override
 	{
-		// Called once per frame, draws random coloured pixels
-		for (int x = 0; x < ScreenWidth(); x++)
-			for (int y = 0; y < ScreenHeight(); y++)
-				Draw(x, y, olc::Pixel(rand() % 256, rand() % 256, rand() % 256));
+		// Called once per frame, draws 3x3 squares
+		for (auto p : points) {
+			for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				Draw(p.x + i, p.y + j, olc::Pixel(olc::));
+				}
+			}
+		}
 		return true;
 	}
 };
