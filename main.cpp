@@ -8,11 +8,18 @@
 // Override base class with your custom functionality
 class Example : public olc::PixelGameEngine
 {
+private : 
+	std::vector<point> points;
 public:
 	Example()
 	{
 		// Name your application
 		sAppName = "Example";
+
+		point p1 = { 24, 65 };
+		point p2 = { 125, 175 };
+		points.push_back(p1);
+		points.push_back(p2);
 	}
 
 public:
